@@ -86,6 +86,7 @@ int main(){
 
     // Buffer is the ID for the data
     VertexBuffer vb(positions, 4 * 2 * sizeof(float));
+    vb.Bind();
 
     // TESTING!
     /*//////////////////////////////////////////////////////
@@ -118,6 +119,7 @@ int main(){
     // Generate and populate Index Buffer
     // ibo = Index Buffer Object
     IndexBuffer ib(indices, 3 * 2);
+    ib.Bind();
 
     // TESTING
     /*/////////////////////////////////////////////////////
@@ -165,7 +167,7 @@ int main(){
         GLCALL(glClear(GL_COLOR_BUFFER_BIT));
 
         // Select our index buffer
-       // ib.Bind();
+        ib.Bind();
 
         // Update color uniform
         GLCALL(glUniform4f(location, colorValue, 0.5f, 0.5f, 1.0f));
